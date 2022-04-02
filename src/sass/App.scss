@@ -1,0 +1,33 @@
+@import './constants';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.app__main{
+    background: $red url('../assets/images/bg-intro-desktop.png');
+    width: 100vw;
+    height: 100vh;
+    @include responsivity(2);
+    grid-template-areas: 
+    "content form"
+    ;
+    .app_left{
+        grid-area: content;
+    }
+    .app__right{
+        grid-area: form;
+    }
+    @media screen and (max-width:48rem) {
+        @include responsivity(1);
+        grid-template-areas:
+         "content" 
+         "form";
+        .app_left{
+            grid-area: content;
+        }
+        .app__right{
+            grid-area: form;
+        }
+    }
+}

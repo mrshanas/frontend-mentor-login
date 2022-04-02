@@ -17,11 +17,11 @@ const Right = () => {
           <input type="password" name="password" placeholder="Password" />
           <br />
           <button type="submit">CLAIM YOUR FREE TRIAL</button>
+          <p>
+            By clicking this button you are agreeing to our{" "}
+            <a href="#">Terms and services</a>
+          </p>
         </form>
-        <p>
-          By clicking this button you are agreeing to our{" "}
-          <a href="#">Terms and services</a>
-        </p>
       </div>
     </div>
   );

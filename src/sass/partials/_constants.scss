@@ -1,0 +1,29 @@
+$red: hsl(0, 100%, 74%);
+$green: hsl(154, 59%, 51%);
+$blue: hsl(248, 32%, 49%);
+$dark-blue: hsl(249, 10%, 26%);
+$grayish-blue: hsl(246, 25%, 77%);
+$spacing: 1rem auto;
+$font: "Poppins", sans-serif;
+
+@mixin responsivity($repeat) {
+  display: grid;
+  grid-template-columns: repeat($repeat, 1fr);
+  grid-template-rows: auto;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin fancy-button($color) {
+  width: 70%;
+  background: $color;
+  border: 1px $color;
+  color: #fff;
+  height: 2.5rem;
+  border-radius: 2.5%;
+}

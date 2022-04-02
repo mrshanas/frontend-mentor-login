@@ -1,33 +1,82 @@
-@import './constants';
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import "./partials/constants";
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+  // 0628540721 erick msumange
 }
-.app__main{
-    background: $red url('../assets/images/bg-intro-desktop.png');
-    width: 100vw;
-    height: 100vh;
-    @include responsivity(2);
-    grid-template-areas: 
-    "content form"
-    ;
-    .app_left{
-        grid-area: content;
+.app__main {
+  @include responsivity(2);
+  background: $red url("../assets/images/bg-intro-desktop.png");
+  width: 100vw;
+  height: 100vh;
+  grid-template-areas: "content form";
+  .app__left {
+    @include center;
+    width: 100%;
+    height: 100%;
+    grid-area: content;
+
+    .app__heading {
+      color: #fff;
+      margin: $spacing;
+      font-weight: 800;
+      font-size: 1.5rem;
+      text-align: center;
     }
-    .app__right{
-        grid-area: form;
+    .app__text {
+      color: #fff;
+      margin: $spacing;
+      text-align: center;
+      font-size: 1rem;
     }
-    @media screen and (max-width:48rem) {
-        @include responsivity(1);
-        grid-template-areas:
-         "content" 
-         "form";
-        .app_left{
-            grid-area: content;
+  }
+  .app__right {
+    grid-area: form;
+    text-align: center;
+    @include center;
+    .app__button {
+      width: 100%;
+      margin: $spacing;
+      button {
+        @include fancy-button($blue);
+      }
+    }
+    .app__form {
+      z-index: 2;
+      background: #fff;
+      height: 80%;
+      margin: $spacing;
+      border-radius: 3%;
+      box-shadow: 0 2px 2px $dark-blue;
+      form {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        input {
+          width: 80%;
+          height: 2.5rem;
         }
-        .app__right{
-            grid-area: form;
+        button {
+          @include fancy-button($green);
         }
+      }
     }
+  }
+  @media screen and (max-width: 48rem) {
+    @include responsivity(1);
+    grid-template-areas:
+      "content"
+      "form";
+    .app_left {
+      grid-area: content;
+    }
+    .app__right {
+      grid-area: form;
+    }
+  }
 }
